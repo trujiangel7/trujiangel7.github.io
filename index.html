@@ -1,1 +1,107 @@
 hola mundo
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <style>
+        /* Estilos para darle vida a la página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem;
+            background: #fff;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; }
+        
+        .profile-img {
+            display: block;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #3498db;
+        }
+
+        section { margin-bottom: 2rem; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>¡Hola! Soy [Tu Nombre]</h1>
+        <p>Entusiasta de la tecnología y aprendiz constante</p>
+    </header>
+
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-img">
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Bienvenido a mi rincón en la web. Soy una persona apasionada por crear cosas nuevas y aprender sobre el mundo digital.</p>
+        </section>
+
+        <section id="habilidades">
+            <h2>Mis Habilidades</h2>
+            <ul>
+                <li>Diseño Web (HTML, CSS)</li>
+                <li>Resolución de problemas</li>
+                <li>Creatividad digital</li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Si quieres charlar o trabajar conmigo, puedes escribirme:</p>
+            <a href="mailto:tu-correo@ejemplo.com" class="btn">Enviarme un correo</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Creado con ❤️ por [Tu Nombre]</p>
+    </footer>
+
+</body>
+</html>
