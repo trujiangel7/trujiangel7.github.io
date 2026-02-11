@@ -1,105 +1,91 @@
-hola mundo
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
+    <title>Mi Portafolio Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Estilos para darle vida a la página */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
         }
-
-        header {
-            background: #2c3e50;
-            color: #ffffff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 2rem;
-            background: #fff;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        h1 { margin: 0; }
-        
-        .profile-img {
-            display: block;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 3px solid #3498db;
-        }
-
-        section { margin-bottom: 2rem; }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover { background: #2980b9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: var(--light-color); }
+        header { background: var(--dark-color); color: white; padding: 2rem 0; text-align: center; }
+        nav { background: #fff; padding: 1rem; position: sticky; top: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 20px; }
+        nav a { text-decoration: none; color: var(--dark-color); font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--primary-color); }
+        section { padding: 4rem 2rem; max-width: 900px; margin: auto; }
+        .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
+        .skills-tag { display: inline-block; background: var(--primary-color); color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; margin: 5px; }
+        footer { background: var(--dark-color); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .social-links a { color: white; font-size: 1.5rem; margin: 0 10px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>¡Hola! Soy Ángel</h1>
-        <p>Entusiasta de la tecnología y aprendiz constante</p>
-    </header>
+<header>
+    <h1>[TU NOMBRE AQUÍ]</h1>
+    <p>Técnico en Sistemas Microinformáticos y Redes | Desarrollador Junior</p>
+</header>
 
-    <div class="container">
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Bienvenido a mi rincón en la web. Soy una persona apasionada por crear cosas nuevas y aprender sobre el mundo digital.</p>
-        </section>
+<nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#formacion">Formación</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+</nav>
 
-        <section id="habilidades">
-            <h2>Mis Habilidades</h2>
-            <ul>
-                <li>Diseño Web (HTML, CSS)</li>
-                <li>Resolución de problemas</li>
-                <li>Creatividad digital</li>
-            </ul>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Si quieres charlar o trabajar conmigo, puedes escribirme:</p>
-            <a href="mailto:tu-correo@ejemplo.com" class="btn">Enviarme un correo</a>
-        </section>
+<section id="sobre-mi">
+    <h2><i class="fas fa-user"></i> Sobre mí</h2>
+    <div class="card">
+        <p>¡Hola! Soy un apasionado de la tecnología con enfoque en la resolución de problemas y el desarrollo de software. Me encanta aprender nuevas herramientas y enfrentarme a retos técnicos que me permitan crecer profesionalmente.</p>
+        <p><strong>Intereses:</strong> Ciberseguridad, desarrollo backend con PHP y montaje de infraestructuras de red.</p>
     </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Creado con ❤️ por Ángel</p>
-    </footer>
+<section id="formacion">
+    <h2><i class="fas fa-graduation-cap"></i> Formación</h2>
+    <div class="card">
+        <h3>Grado Medio en Sistemas Microinformáticos y Redes (SMR)</h3>
+        <p>Especialización en montaje de equipos, redes locales y administración de sistemas operativos.</p>
+    </div>
+    <div class="card">
+        <h3>Curso Especializado en PHP</h3>
+        <p>Desarrollo de aplicaciones web dinámicas y gestión de bases de datos MySQL.</p>
+    </div>
+</section>
+
+<section id="proyectos">
+    <h2><i class="fas fa-code"></i> Mis Proyectos</h2>
+    <div class="card">
+        <h3>Prototipo 1º Hackathon</h3>
+        <p>Desarrollo de una solución innovadora bajo presión de tiempo, trabajando en equipo para resolver un problema real de [Insertar temática].</p>
+        <span class="skills-tag">Trabajo en equipo</span> <span class="skills-tag">Innovación</span>
+    </div>
+    <div class="card">
+        <h3>Proyecto de Prácticas (FCT)</h3>
+        <p>Actualmente diseñando y desarrollando soluciones tecnológicas para optimizar procesos internos en la empresa de prácticas.</p>
+        <span class="skills-tag">Próximamente</span>
+    </div>
+</section>
+
+<section id="contacto">
+    <h2><i class="fas fa-envelope"></i> Contacto</h2>
+    <div class="card" style="text-align: center;">
+        <p>¿Te interesa mi perfil? ¡Hablemos!</p>
+        <div class="social-links">
+            <a href="mailto:tuemail@ejemplo.com"><i class="fas fa-at"></i></a>
+            <a href="https://linkedin.com/in/tu-usuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 - Diseñado con <i class="fas fa-heart" style="color: #e25555;"></i> por [Tu Nombre]</p>
+</footer>
 
 </body>
 </html>
