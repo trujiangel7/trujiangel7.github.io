@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ángel Trujillo | Portfolio</title>
+    <title>Ángel Trujillo | Portfolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +12,7 @@
             --secondary: #a855f7;
             --dark: #0f172a;
             --text: #f8fafc;
+            --accent: #22d3ee;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,10 +37,10 @@
         nav {
             position: fixed;
             top: 0; width: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1rem;
+            padding: 1.2rem;
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -49,48 +50,48 @@
         nav a {
             color: var(--text);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-weight: 600;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             transition: 0.3s;
+            opacity: 0.8;
         }
 
-        nav a:hover { color: var(--primary); }
+        nav a:hover { color: var(--accent); opacity: 1; }
 
-        /* --- Header --- */
+        /* --- Hero Section --- */
         header {
-            height: 60vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 2rem;
-            margin-top: 50px;
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 800;
-            background: linear-gradient(to right, #fff, var(--primary));
+            background: linear-gradient(to right, #fff, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
         }
 
-        header p { font-size: 1.2rem; opacity: 0.8; max-width: 600px; }
+        header p { font-size: 1.2rem; opacity: 0.9; color: #cbd5e1; max-width: 700px; }
 
-        /* --- Secciones --- */
+        /* --- Estructura Secciones --- */
         section {
-            padding: 5rem 10%;
-            max-width: 1100px;
+            padding: 6rem 10%;
+            max-width: 1200px;
             margin: auto;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -103,71 +104,81 @@
             background: linear-gradient(to right, var(--primary), transparent);
         }
 
-        /* --- Tarjetas (Glassmorphism) --- */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            padding: 2.5rem;
+            border-radius: 24px;
             margin-bottom: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(99, 102, 241, 0.5);
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--accent);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
+        /* --- Etiquetas --- */
         .skills-tag {
             display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            color: #c7d2fe;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.75rem;
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
             margin: 5px;
-            border: 1px solid var(--primary);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+        }
+
+        /* --- Grid de Proyectos --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         /* --- Contacto --- */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 1.5rem;
+            gap: 30px;
+            margin-top: 2rem;
         }
 
         .social-links a {
             color: var(--text);
-            font-size: 2rem;
-            transition: 0.3s;
+            font-size: 2.2rem;
+            transition: 0.4s;
+            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.3));
         }
 
         .social-links a:hover {
-            color: var(--primary);
-            transform: scale(1.2);
+            color: var(--accent);
+            transform: translateY(-5px) rotate(8deg);
         }
 
         footer {
             text-align: center;
-            padding: 3rem;
-            opacity: 0.6;
+            padding: 4rem;
+            background: rgba(15, 23, 42, 0.9);
             font-size: 0.9rem;
+            color: #94a3b8;
         }
 
-        /* Responsivo */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            nav { gap: 15px; font-size: 0.7rem; }
+            section { padding: 4rem 5%; }
+            nav { gap: 15px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#sobre-mi">Perfil</a>
     <a href="#formacion">Formación</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#contacto">Contacto</a>
@@ -175,54 +186,86 @@
 
 <header>
     <h1>Ángel Trujillo Vizcaya</h1>
-    <p>Técnico Informático & Estudiante de Desarrollo de Aplicaciones Multiplataforma</p>
+    <p>💻 Estudiante de DAM | Especialista en Sistemas y Redes | Apasionado del Backend</p>
 </header>
 
 <section id="sobre-mi">
-    <h2><i class="fas fa-user-astronaut"></i> Sobre mí</h2>
+    <h2><i class="fas fa-user-ninja"></i> Sobre mí</h2>
     <div class="card">
-        <p>¡Hola! Soy un apasionado de la tecnología enfocado en la resolución creativa de problemas y el desarrollo de software moderno. Mi objetivo es construir herramientas que impacten positivamente en la vida de las personas.</p>
-        <div style="margin-top: 20px;">
-            <span class="skills-tag">Ciberseguridad</span>
-            <span class="skills-tag">Backend PHP</span>
-            <span class="skills-tag">Infraestructura de Redes</span>
-            <span class="skills-tag">Resolución de Problemas</span>
+        <p>¡Hola! Soy un entusiasta de la informática con sede en Albacete. Me especializo en entender cómo funcionan las cosas desde la infraestructura física hasta la lógica del código. Me encanta enfrentar retos técnicos, participar en eventos de innovación y aprender constantemente nuevas tecnologías.</p>
+        <div style="margin-top: 25px;">
+            <p><strong>Lo que me define:</strong></p>
+            <span class="skills-tag">Pensamiento Crítico</span>
+            <span class="skills-tag">Autodidacta</span>
+            <span class="skills-tag">Amante del Hardware</span>
+            <span class="skills-tag">Team Player</span>
         </div>
     </div>
 </section>
 
 <section id="formacion">
-    <h2><i class="fas fa-graduation-cap"></i> Formación</h2>
+    <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
     <div class="card">
-        <h3>1º Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-        <p>Actualmente cursando. Adquiriendo bases sólidas en programación, bases de datos y entornos de desarrollo.</p>
+        <h3 style="color: var(--accent);">1º Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+        <p style="color: #94a3b8; margin-bottom: 10px;">IES [Nombre de tu centro] | 2025 - Actualidad</p>
+        <p>Enfoque en programación orientada a objetos, gestión de bases de datos y diseño de interfaces.</p>
+    </div>
+    <div class="card">
+        <h3>Sistemas Microinformáticos y Redes (SMR)</h3>
+        <p style="color: #94a3b8; margin-bottom: 10px;">Grado Medio Finalizado</p>
+        <p>Dominio de montaje de equipos, configuración de redes locales (Cisco/Mikrotik) y administración de Windows/Linux Server.</p>
+    </div>
+    <div class="card" style="border-left: 4px solid var(--primary);">
+        <h3>Especialización en PHP & Backend</h3>
+        <p>Curso avanzado centrado en desarrollo web dinámico, seguridad en el lado del servidor y arquitectura MVC.</p>
+        <span class="skills-tag">PHP 8.x</span> <span class="skills-tag">MySQL</span> <span class="skills-tag">APIs</span>
     </div>
 </section>
 
 <section id="proyectos">
-    <h2><i class="fas fa-laptop-code"></i> Proyectos Destacados</h2>
-    <div class="card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <h3>Prototipo 1º Hackathon: "Parking Albacete"</h3>
+    <h2><i class="fas fa-rocket"></i> Mis Proyectos & Trabajos</h2>
+    <div class="project-grid">
+        <div class="card">
+            <h3 style="margin-bottom: 15px;">🚀 Hackathon Albacete</h3>
+            <p><strong>Reto:</strong> Falta de aparcamiento en la ciudad.</p>
+            <p>Diseño de un prototipo funcional que conecta sensores en tiempo real con una app móvil para guiar a los conductores.</p>
+            <div style="margin-top: 15px;">
+                <span class="skills-tag">IoT</span> <span class="skills-tag">UX/UI</span>
+            </div>
         </div>
-        <p>Desarrollo de una solución inteligente para mitigar la falta de aparcamiento en Albacete. Un reto de innovación donde lideré la parte técnica bajo presión de tiempo.</p>
+        <div class="card">
+            <h3 style="margin-bottom: 15px;">🛠️ Proyecto de Prácticas</h3>
+            <p><strong>Fase actual:</strong> Diseño y planificación.</p>
+            <p>Desarrollo de un sistema para la gestión interna de procesos durante el periodo de FCT, aplicando metodologías ágiles.</p>
+            <div style="margin-top: 15px;">
+                <span class="skills-tag">Java</span> <span class="skills-tag">SQL</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="margin-bottom: 15px;">🌐 Infraestructura SMR</h3>
+            <p>Diseño completo de una red de oficina con segmentación por VLANs y servidor centralizado de archivos.</p>
+            <div style="margin-top: 15px;">
+                <span class="skills-tag">Networking</span> <span class="skills-tag">Active Directory</span>
+            </div>
+        </div>
     </div>
 </section>
 
 <section id="contacto">
-    <h2><i class="fas fa-paper-plane"></i> Contacto</h2>
-    <div class="card" style="text-align: center;">
-        <p>¿Tienes una propuesta o quieres charlar sobre tecnología?</p>
+    <h2><i class="fas fa-link"></i> Conecta conmigo</h2>
+    <div class="card" style="text-align: center; background: linear-gradient(145deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));">
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">¿Buscando un perfil técnico comprometido? ¡Hablemos!</p>
         <div class="social-links">
-            <a href="mailto:tuemail@ejemplo.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:tuemail@ejemplo.com" title="Enviar un Email"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/tu-usuario" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/tu-usuario" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 | Ángel Trujillo Vizcaya | Hecho con <i class="fas fa-code"></i> y mucho café.</p>
+    <p>&copy; 2026 | Ángel Trujillo Vizcaya | Diseñado para destacar</p>
 </footer>
 
 </body>
