@@ -287,6 +287,78 @@ body::before{content:'';position:fixed;inset:0;background:
 .ddismiss{background:none;border:none;color:var(--text3);font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif;padding:4px;width:100%;margin-top:2px;}
 
 
+
+/* PET PAGE */
+.pet-wrap{display:flex;flex-direction:column;gap:12px;overflow-y:auto;padding-bottom:calc(20px + var(--safe-bot));}
+.pet-header{background:linear-gradient(135deg,rgba(91,200,192,.12),rgba(184,166,232,.08));border-bottom:1px solid var(--border);padding:14px 16px;}
+.pet-title-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.pet-name{font-family:'Fraunces',serif;font-size:22px;font-weight:400;color:var(--teal);}
+.pet-subtitle{font-size:11px;color:var(--text3);margin-top:1px;}
+.pet-level-badge{background:linear-gradient(135deg,var(--amber),#e8902a);color:#0d1b2a;font-size:13px;font-weight:800;border-radius:20px;padding:6px 14px;font-family:'Fraunces',serif;}
+.pet-stats{display:flex;flex-direction:column;gap:7px;}
+.pet-stat-row{display:flex;align-items:center;gap:8px;}
+.pet-stat-icon{font-size:14px;width:20px;text-align:center;}
+.pet-stat-lbl{font-size:11px;color:var(--text3);width:46px;flex-shrink:0;}
+.pet-bar-wrap{flex:1;background:var(--bg3);border-radius:8px;height:10px;overflow:hidden;}
+.pet-bar{height:100%;border-radius:8px;transition:width .6s ease;}
+.health-bar{background:linear-gradient(90deg,#ff4d5e,#ff8a80);}
+.mood-bar{background:linear-gradient(90deg,#ffd166,#ffb830);}
+.energy-bar{background:linear-gradient(90deg,#5bc8c0,#8ee8d8);}
+.hunger-bar{background:linear-gradient(90deg,#b8a6e8,#8a72cc);}
+.pet-stat-val{font-size:11px;font-weight:700;color:var(--text2);width:26px;text-align:right;}
+
+/* SCENE */
+.pet-scene{position:relative;height:180px;background:linear-gradient(180deg,#0d1b2a 0%,#112236 60%,#1a3050 100%);overflow:hidden;margin:0 16px;border-radius:20px;border:1px solid var(--border2);}
+.pet-bg-elements{position:absolute;inset:0;pointer-events:none;}
+.pet-cloud{position:absolute;font-size:22px;opacity:.4;animation:cloudFloat linear infinite;}
+#cloud1{top:12px;animation-duration:18s;animation-delay:-6s;}
+#cloud2{top:28px;animation-duration:24s;animation-delay:-12s;}
+@keyframes cloudFloat{from{left:-40px;}to{left:110%;}}
+.pet-sun{position:absolute;top:10px;right:16px;font-size:26px;animation:sunSpin 20s linear infinite;}
+@keyframes sunSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.pet-sprite-wrap{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);text-align:center;cursor:pointer;}
+.pet-sprite-wrap:active .pet-sprite{transform:scale(.9);}
+.pet-sprite{font-size:64px;line-height:1;transition:transform .15s;filter:drop-shadow(0 4px 12px rgba(91,200,192,.4));}
+.pet-sprite.bounce{animation:petBounce .5s ease;}
+@keyframes petBounce{0%,100%{transform:translateY(0);}30%{transform:translateY(-18px);}60%{transform:translateY(-8px);}}
+.pet-sprite.shake{animation:petShake .4s ease;}
+@keyframes petShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+.pet-sprite.spin{animation:petSpin .6s ease;}
+@keyframes petSpin{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+.pet-shadow{width:48px;height:10px;background:rgba(0,0,0,.3);border-radius:50%;margin:4px auto 0;filter:blur(3px);}
+.pet-speech{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:7px 12px;font-size:12px;color:var(--text);white-space:nowrap;margin-bottom:8px;opacity:0;transition:opacity .3s;pointer-events:none;max-width:200px;white-space:normal;text-align:center;z-index:10;}
+.pet-speech.show{opacity:1;}
+.pet-speech::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--card2);}
+.pet-ground{position:absolute;bottom:0;left:0;right:0;height:36px;background:linear-gradient(180deg,rgba(46,213,115,.08),rgba(46,213,115,.04));}
+.pet-grass{font-size:14px;text-align:center;line-height:36px;letter-spacing:2px;}
+
+/* ACTIONS */
+.pet-actions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px;}
+.pet-action{background:var(--card);border:1.5px solid var(--border2);border-radius:18px;padding:13px 8px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Nunito',sans-serif;}
+.pet-action:active{transform:scale(.94);}
+.pet-action:disabled{opacity:.4;cursor:not-allowed;}
+.pet-act-icon{font-size:26px;}
+.pet-act-lbl{font-size:11px;font-weight:700;color:var(--text2);}
+.pet-act-cost{font-size:10px;color:var(--amber);font-weight:600;}
+
+/* TIP */
+.pet-tip-box{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:12px 14px;margin:0 16px;display:flex;gap:10px;align-items:flex-start;}
+.pet-tip-icon{font-size:18px;flex-shrink:0;}
+.pet-tip-text{font-size:12px;color:var(--text3);line-height:1.6;}
+
+/* EVOLUTION */
+.pet-evo-section{padding:0 16px;}
+.pet-evo-title{font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px;}
+.pet-evo-track{display:flex;align-items:center;justify-content:space-between;}
+.pet-evo-step{display:flex;flex-direction:column;align-items:center;gap:4px;opacity:.3;transition:all .4s;}
+.pet-evo-step.unlocked{opacity:1;}
+.pet-evo-step.current{opacity:1;}
+.pet-evo-step.current .pet-evo-sprite{animation:evoPulse 2s ease-in-out infinite;}
+@keyframes evoPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
+.pet-evo-sprite{font-size:28px;}
+.pet-evo-lbl{font-size:10px;color:var(--text3);text-align:center;line-height:1.4;}
+.pet-evo-arrow{color:var(--text3);font-size:12px;}
+
 /* PRIVACY PAGE */
 .privacy-wrap{padding:0 0 calc(24px + var(--safe-bot));overflow-y:auto;}
 .priv-hero{background:linear-gradient(135deg,rgba(91,200,192,.15),rgba(184,166,232,.1));border-bottom:1px solid var(--border);padding:24px 20px 20px;text-align:center;}
@@ -377,6 +449,7 @@ body::before{content:'';position:fixed;inset:0;background:
     <button class="tab-btn" onclick="switchTab('contacts',this)"><span class="tab-icon">📞</span>Contactos</button>
     <button class="tab-btn" onclick="switchTab('diary',this)"><span class="tab-icon">📓</span>Diario</button>
     <button class="tab-btn" onclick="switchTab('wellness',this)"><span class="tab-icon">🌿</span>Bienestar</button>
+    <button class="tab-btn" onclick="switchTab('pet',this)"><span class="tab-icon">🐣</span>Mascota</button>
     <button class="tab-btn" onclick="switchTab('privacy',this)"><span class="tab-icon">🔒</span>Privacidad</button>
   </nav>
 
@@ -538,6 +611,135 @@ body::before{content:'';position:fixed;inset:0;background:
     <div class="footer-resp">Responsable: Gloria Parra Requena</div>
   </div>
 
+
+
+  <!-- ════ PET ════ -->
+  <div class="page" id="page-pet">
+    <div class="pet-wrap">
+
+      <div class="pet-header">
+        <div class="pet-title-row">
+          <div>
+            <div class="pet-name" id="petName">Lumí</div>
+            <div class="pet-subtitle">Tu compañero de bienestar</div>
+          </div>
+          <div class="pet-level-badge">Nv. <span id="petLevel">1</span></div>
+        </div>
+        <!-- Stats bars -->
+        <div class="pet-stats">
+          <div class="pet-stat-row">
+            <span class="pet-stat-icon">❤️</span>
+            <span class="pet-stat-lbl">Salud</span>
+            <div class="pet-bar-wrap"><div class="pet-bar health-bar" id="barHealth"></div></div>
+            <span class="pet-stat-val" id="valHealth">100</span>
+          </div>
+          <div class="pet-stat-row">
+            <span class="pet-stat-icon">😊</span>
+            <span class="pet-stat-lbl">Ánimo</span>
+            <div class="pet-bar-wrap"><div class="pet-bar mood-bar" id="barMood"></div></div>
+            <span class="pet-stat-val" id="valMood">100</span>
+          </div>
+          <div class="pet-stat-row">
+            <span class="pet-stat-icon">⚡</span>
+            <span class="pet-stat-lbl">Energía</span>
+            <div class="pet-bar-wrap"><div class="pet-bar energy-bar" id="barEnergy"></div></div>
+            <span class="pet-stat-val" id="valEnergy">100</span>
+          </div>
+          <div class="pet-stat-row">
+            <span class="pet-stat-icon">🍽️</span>
+            <span class="pet-stat-lbl">Hambre</span>
+            <div class="pet-bar-wrap"><div class="pet-bar hunger-bar" id="barHunger"></div></div>
+            <span class="pet-stat-val" id="valHunger">100</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PET SCENE -->
+      <div class="pet-scene" id="petScene">
+        <div class="pet-bg-elements">
+          <div class="pet-cloud" id="cloud1">☁️</div>
+          <div class="pet-cloud" id="cloud2">☁️</div>
+          <div class="pet-sun" id="petSun">☀️</div>
+        </div>
+        <div class="pet-sprite-wrap" id="petSpriteWrap">
+          <div class="pet-speech" id="petSpeech"></div>
+          <div class="pet-sprite" id="petSprite">🐣</div>
+          <div class="pet-shadow"></div>
+        </div>
+        <div class="pet-ground">
+          <div class="pet-grass">🌱🌿🌱🌿🌱🌿🌱🌿🌱</div>
+        </div>
+      </div>
+
+      <!-- XP BAR -->
+      <div style="padding:0 16px 4px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+          <span style="font-size:11px;color:var(--text3);">Experiencia</span>
+          <span style="font-size:11px;color:var(--amber);">⭐ <span id="petXP">0</span> / <span id="petXPNext">100</span> XP</span>
+        </div>
+        <div style="background:var(--bg3);border-radius:8px;height:8px;overflow:hidden;">
+          <div id="xpBar" style="height:100%;background:linear-gradient(90deg,var(--amber),#e8902a);border-radius:8px;transition:width .5s;width:0%;"></div>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="pet-actions-grid">
+        <button class="pet-action" onclick="petAction('feed')" id="btnFeed">
+          <span class="pet-act-icon">🍎</span>
+          <span class="pet-act-lbl">Alimentar</span>
+          <span class="pet-act-cost" id="costFeed">−</span>
+        </button>
+        <button class="pet-action" onclick="petAction('play')" id="btnPlay">
+          <span class="pet-act-icon">🎾</span>
+          <span class="pet-act-lbl">Jugar</span>
+          <span class="pet-act-cost" id="costPlay">−</span>
+        </button>
+        <button class="pet-action" onclick="petAction('sleep')" id="btnSleep">
+          <span class="pet-act-icon">😴</span>
+          <span class="pet-act-lbl">Dormir</span>
+          <span class="pet-act-cost" id="costSleep">−</span>
+        </button>
+        <button class="pet-action" onclick="petAction('hug')" id="btnHug">
+          <span class="pet-act-icon">🤗</span>
+          <span class="pet-act-lbl">Abrazar</span>
+          <span class="pet-act-cost" id="costHug">−</span>
+        </button>
+        <button class="pet-action" onclick="petAction('clean')" id="btnClean">
+          <span class="pet-act-icon">🛁</span>
+          <span class="pet-act-lbl">Bañar</span>
+          <span class="pet-act-cost" id="costClean">−</span>
+        </button>
+        <button class="pet-action" onclick="petAction('medicine')" id="btnMedicine">
+          <span class="pet-act-icon">💊</span>
+          <span class="pet-act-lbl">Medicina</span>
+          <span class="pet-act-cost" id="costMedicine">−</span>
+        </button>
+      </div>
+
+      <!-- TIP BOX -->
+      <div class="pet-tip-box" id="petTipBox">
+        <div class="pet-tip-icon">💡</div>
+        <div class="pet-tip-text" id="petTipText">Cuida a Lumí cada día para que crezca feliz. ¡Las acciones cuestan puntos!</div>
+      </div>
+
+      <!-- EVOLUTION TRACK -->
+      <div class="pet-evo-section">
+        <div class="pet-evo-title">Evolución de Lumí</div>
+        <div class="pet-evo-track">
+          <div class="pet-evo-step" id="evo0"><div class="pet-evo-sprite">🥚</div><div class="pet-evo-lbl">Huevo<br><small>Nv.1</small></div></div>
+          <div class="pet-evo-arrow">→</div>
+          <div class="pet-evo-step" id="evo1"><div class="pet-evo-sprite">🐣</div><div class="pet-evo-lbl">Pollito<br><small>Nv.2</small></div></div>
+          <div class="pet-evo-arrow">→</div>
+          <div class="pet-evo-step" id="evo2"><div class="pet-evo-sprite">🐥</div><div class="pet-evo-lbl">Girasol<br><small>Nv.3</small></div></div>
+          <div class="pet-evo-arrow">→</div>
+          <div class="pet-evo-step" id="evo3"><div class="pet-evo-sprite">🌟</div><div class="pet-evo-lbl">Estrella<br><small>Nv.4</small></div></div>
+          <div class="pet-evo-arrow">→</div>
+          <div class="pet-evo-step" id="evo4"><div class="pet-evo-sprite">🦋</div><div class="pet-evo-lbl">Mariposa<br><small>Nv.5</small></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ════ PRIVACY ════ -->
   <div class="page" id="page-privacy">
@@ -1256,6 +1458,236 @@ function build541() {
   document.getElementById('g541').innerHTML=steps.map(s=>`<div class="g541-item"><div class="g541-num" style="background:${s.col}22;border:2px solid ${s.col}44;color:${s.col};">${s.n}</div><div><div style="font-size:11px;font-weight:700;color:${s.col};letter-spacing:.5px;">${s.s}</div><div style="font-size:12px;color:var(--text3);margin-top:2px;">${s.p}</div></div></div>`).join('');
 }
 
+
+// ══ PET SYSTEM ══
+const PET_SPRITES = ['🥚','🐣','🐥','🌟','🦋'];
+const PET_NAMES_EVO = ['Huevo','Lumí','Girasol','Estrella','Mariposa'];
+const PET_SPEECHES = {
+  happy:  ['¡Estoy muy feliz! 🥰','¡Me encanta estar contigo!','¡Hoy es un gran día! ✨','¡Gracias por cuidarme! 💙'],
+  hungry: ['Tengo hambre... 🍎','¿Puedes darme algo de comer?','Mi barriga hace ruidos 😅'],
+  sad:    ['Estoy un poco triste... 😔','Necesito un abrazo 🤗','¿Estás bien tú también?'],
+  tired:  ['Tengo sueño... 😴','Necesito descansar un poco','Zzz...'],
+  sick:   ['No me encuentro bien... 😷','Necesito medicina 💊','Me duele la cabeza...'],
+  bored:  ['¡Juguemos! 🎾','Estoy aburrido/a...','¿Hacemos algo juntos?'],
+  feed:   ['¡Ñam ñam! 😋','¡Delicioso! 🍎','¡Gracias por la comida!'],
+  play:   ['¡Yuhu! 🎾','¡Qué divertido!','¡Más, más! 🎉'],
+  sleep:  ['Buenas noches... 💤','Zzz... 😴','Que descanses tú también 🌙'],
+  hug:    ['💙 ¡Te quiero!','¡Me siento muy querido/a!','¡El mejor abrazo! 🤗'],
+  clean:  ['¡Qué limpio estoy! 🛁','¡Huelo genial! ✨','¡Como nuevo/a!'],
+  medicine:['¡Ya me siento mejor! 💊','¡Gracias! Me has curado 💙','¡Salud! 🌿'],
+  levelup:['¡He evolucionado! 🎉','¡Mira cómo he crecido! ✨','¡Somos el mejor equipo! 💙'],
+};
+
+const PET_ACTIONS = {
+  feed:     { cost:5,  label:'−5pts', health:5,  mood:8,  energy:5,  hunger:25, speech:'feed'   },
+  play:     { cost:8,  label:'−8pts', health:3,  mood:20, energy:-10,hunger:-8, speech:'play'   },
+  sleep:    { cost:0,  label:'Gratis',health:10, mood:5,  energy:30, hunger:-5, speech:'sleep'  },
+  hug:      { cost:3,  label:'−3pts', health:2,  mood:15, energy:5,  hunger:0,  speech:'hug'    },
+  clean:    { cost:5,  label:'−5pts', health:8,  mood:10, energy:0,  hunger:0,  speech:'clean'  },
+  medicine: { cost:10, label:'−10pts',health:25, mood:5,  energy:5,  hunger:0,  speech:'medicine'},
+};
+
+let pet = JSON.parse(localStorage.getItem('hu_pet') || 'null') || {
+  health:80, mood:75, energy:85, hunger:70,
+  xp:0, level:1, lastSave: Date.now()
+};
+
+let petSpeechTimer = null;
+
+function savePet() {
+  pet.lastSave = Date.now();
+  localStorage.setItem('hu_pet', JSON.stringify(pet));
+}
+
+function clamp(v,min,max){ return Math.max(min,Math.min(max,v)); }
+
+function applyTimeDecay() {
+  const now = Date.now();
+  const hoursElapsed = (now - (pet.lastSave||now)) / 3600000;
+  const decay = Math.min(hoursElapsed * 4, 30); // max 30 pts decay per visit
+  pet.health  = clamp(pet.health  - decay * 0.5, 0, 100);
+  pet.mood    = clamp(pet.mood    - decay * 0.8, 0, 100);
+  pet.energy  = clamp(pet.energy  - decay * 0.6, 0, 100);
+  pet.hunger  = clamp(pet.hunger  - decay * 1.0, 0, 100);
+}
+
+function petAction(action) {
+  const a = PET_ACTIONS[action];
+  if (points < a.cost && a.cost > 0) {
+    showToast('⭐ Necesitas ' + a.cost + ' puntos para esto');
+    petSay('¡Gana puntos cuidándote! 💙');
+    return;
+  }
+  if (a.cost > 0) {
+    points -= a.cost;
+    localStorage.setItem('hu_pts', points);
+    document.getElementById('ptsTotal').textContent = '⭐ ' + points + ' puntos acumulados';
+  }
+
+  pet.health  = clamp(pet.health  + (a.health  ||0), 0, 100);
+  pet.mood    = clamp(pet.mood    + (a.mood    ||0), 0, 100);
+  pet.energy  = clamp(pet.energy  + (a.energy  ||0), 0, 100);
+  pet.hunger  = clamp(pet.hunger  + (a.hunger  ||0), 0, 100);
+  pet.xp      = (pet.xp || 0) + 10;
+
+  // Animate sprite
+  const sprite = document.getElementById('petSprite');
+  sprite.classList.remove('bounce','shake','spin');
+  void sprite.offsetWidth;
+  const anims = { feed:'bounce', play:'spin', sleep:'bounce', hug:'bounce', clean:'spin', medicine:'shake' };
+  sprite.classList.add(anims[action] || 'bounce');
+  setTimeout(() => sprite.classList.remove('bounce','shake','spin'), 700);
+
+  // Say something
+  const speeches = PET_SPEECHES[a.speech] || PET_SPEECHES.happy;
+  petSay(speeches[Math.floor(Math.random()*speeches.length)]);
+
+  checkLevelUp();
+  savePet();
+  renderPet();
+  showToast(a.cost > 0 ? `${['feed','play','hug','clean','medicine'].includes(action)?'🐣':'😴'} ¡${document.getElementById('petSprite').textContent} feliz! −${a.cost} pts` : '😴 ¡Lumí descansa!');
+}
+
+function petSay(text) {
+  const bubble = document.getElementById('petSpeech');
+  if (!bubble) return;
+  bubble.textContent = text;
+  bubble.classList.add('show');
+  if (petSpeechTimer) clearTimeout(petSpeechTimer);
+  petSpeechTimer = setTimeout(() => bubble.classList.remove('show'), 3000);
+}
+
+function checkLevelUp() {
+  const xpNeeded = [0,100,250,500,900];
+  const nextLvl = pet.level + 1;
+  if (nextLvl <= 5 && pet.xp >= xpNeeded[pet.level]) {
+    pet.level = nextLvl;
+    addPoints(30, 'Lumí evolucionó');
+    setTimeout(() => {
+      petSay(PET_SPEECHES.levelup[Math.floor(Math.random()*PET_SPEECHES.levelup.length)]);
+      showToast('🎉 ¡Lumí ha evolucionado a Nivel ' + pet.level + '! +30pts');
+      renderPet();
+    }, 500);
+  }
+}
+
+function getPetMood() {
+  const avg = (pet.health + pet.mood + pet.energy + pet.hunger) / 4;
+  if (avg >= 80) return 'happy';
+  if (pet.hunger < 25) return 'hungry';
+  if (pet.energy < 25) return 'tired';
+  if (pet.health < 30) return 'sick';
+  if (pet.mood < 30)   return 'sad';
+  return 'bored';
+}
+
+function getAutoSpeech() {
+  const mood = getPetMood();
+  const s = PET_SPEECHES[mood];
+  return s[Math.floor(Math.random()*s.length)];
+}
+
+function renderPet() {
+  // Sprite evolution
+  const lvl = Math.min(pet.level, 5);
+  const sprite = document.getElementById('petSprite');
+  if (sprite) sprite.textContent = PET_SPRITES[lvl - 1];
+
+  // Level
+  const lv = document.getElementById('petLevel');
+  if (lv) lv.textContent = pet.level;
+
+  // Bars
+  const bars = {
+    barHealth: pet.health, barMood: pet.mood,
+    barEnergy: pet.energy, barHunger: pet.hunger
+  };
+  const vals = {
+    valHealth: pet.health, valMood: pet.mood,
+    valEnergy: pet.energy, valHunger: pet.hunger
+  };
+  Object.entries(bars).forEach(([id, v]) => {
+    const el = document.getElementById(id);
+    if (el) el.style.width = Math.round(v) + '%';
+  });
+  Object.entries(vals).forEach(([id, v]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = Math.round(v);
+  });
+
+  // XP bar
+  const xpNeeded = [100,150,250,400,999999];
+  const xpForLevel = xpNeeded[Math.min(pet.level-1, 4)];
+  const xpEl = document.getElementById('xpBar');
+  if (xpEl) xpEl.style.width = Math.min((pet.xp / xpForLevel)*100, 100) + '%';
+  const xpNum = document.getElementById('petXP');
+  if (xpNum) xpNum.textContent = pet.xp;
+  const xpNext = document.getElementById('petXPNext');
+  if (xpNext) xpNext.textContent = xpForLevel;
+
+  // Action costs
+  Object.entries(PET_ACTIONS).forEach(([key, a]) => {
+    const el = document.getElementById('cost' + key.charAt(0).toUpperCase() + key.slice(1));
+    if (el) el.textContent = a.cost > 0 ? '−' + a.cost + 'pts' : 'Gratis';
+    const btn = document.getElementById('btn' + key.charAt(0).toUpperCase() + key.slice(1));
+    if (btn) btn.disabled = (points < a.cost && a.cost > 0);
+  });
+
+  // Evolution track
+  for (let i = 0; i < 5; i++) {
+    const step = document.getElementById('evo' + i);
+    if (!step) continue;
+    step.classList.remove('unlocked','current');
+    if (i + 1 < pet.level) step.classList.add('unlocked');
+    if (i + 1 === pet.level) step.classList.add('current');
+  }
+
+  // Tip based on lowest stat
+  const tips = {
+    hungry: '🍎 Lumí tiene hambre. ¡Dale de comer con tus puntos!',
+    tired:  '😴 Lumí está agotado. Hazle dormir — ¡es gratis!',
+    sick:   '💊 Lumí está malito. Necesita medicina urgente.',
+    sad:    '🤗 Lumí está triste. Un abrazo le animará mucho.',
+    bored:  '🎾 Lumí se aburre. ¡Juega con él!',
+    happy:  '✨ Lumí está feliz. ¡Sigue cuidándole así!',
+  };
+  const tip = document.getElementById('petTipText');
+  if (tip) tip.textContent = tips[getPetMood()];
+
+  // Scene background changes with pet mood
+  const scene = document.getElementById('petScene');
+  if (scene) {
+    const avg = (pet.health + pet.mood + pet.energy + pet.hunger) / 4;
+    if (avg >= 75) scene.style.background = 'linear-gradient(180deg,#0d2a1e 0%,#112a30 60%,#1a3050 100%)';
+    else if (avg >= 40) scene.style.background = 'linear-gradient(180deg,#0d1b2a 0%,#112236 60%,#1a3050 100%)';
+    else scene.style.background = 'linear-gradient(180deg,#1a0d0d 0%,#2a1212 60%,#3a1a1a 100%)';
+  }
+
+  // Pet name evolves
+  const nm = document.getElementById('petName');
+  if (nm) nm.textContent = PET_NAMES_EVO[Math.min(pet.level-1,4)];
+}
+
+function initPet() {
+  applyTimeDecay();
+  renderPet();
+  // Auto-speak every 30s
+  setInterval(() => {
+    if (document.getElementById('page-pet').classList.contains('active')) {
+      petSay(getAutoSpeech());
+    }
+  }, 30000);
+  // Tap pet to hear it speak
+  document.getElementById('petSpriteWrap')?.addEventListener('click', () => {
+    const sprite = document.getElementById('petSprite');
+    sprite.classList.remove('bounce');
+    void sprite.offsetWidth;
+    sprite.classList.add('bounce');
+    petSay(getAutoSpeech());
+    setTimeout(() => sprite.classList.remove('bounce'), 700);
+  });
+}
+
 // ══ INIT ══
 document.addEventListener('DOMContentLoaded', () => {
   // Set logos
@@ -1275,6 +1707,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('ptsTotal').textContent = '⭐ '+points+' puntos acumulados';
   newAff();
   build541();
+  initPet();
 });
 </script>
 </body>
